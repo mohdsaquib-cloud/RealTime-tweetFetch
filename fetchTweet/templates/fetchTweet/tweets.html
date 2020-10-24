@@ -1,0 +1,29 @@
+ 
+{% extends "fetchTweet/home.html" %} {% block content %}
+    <div class="container">
+        <h2>Tweets {{username}}</h2>
+        <ul id="list" class="list-group">
+            {% for tweet in tweets %}
+                <li class="list-group-item">{{tweet}}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    <script>   
+    const chatSocket = new WebSocket(
+            'ws://'
+            + window.location.host
+            + '/ws/fetchTweet/'
+            + "add"
+            + '/'
+        );
+        chatSocket.onmessage = function(e) {
+            console.log(e.data)
+            const data = JSON.parse(e.data);
+            var ul = document.getElementById("list");
+            var li = document.createElement("li");
+            li.appendChild(document.createTextNode(data.message));
+            li.setAttribute("class", "list-group-item");
+            ul.appendChild(li);
+        };
+         </script>    
+{% endblock %}

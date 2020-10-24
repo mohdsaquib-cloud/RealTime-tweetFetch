@@ -1,0 +1,12 @@
+{% extends "fetchTweet/home.html" %} 
+{% block content %}
+    <div class="container" style="width:40%">        
+    <form action="" method="post">{% csrf_token %}
+        <div class="form-group">
+          <label for="keyword">Keyword</label>
+          <input type="text" name="keyword" class="form-control" id="keyword" aria-describedby="emailHelp" placeholder="keyword">          
+        </div>               
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>   
+{% endblock %}
