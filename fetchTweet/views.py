@@ -16,10 +16,10 @@ queue = Queue()
 def authTwitter():
     try:
         # Set these these keys to environmental variable 
-        consumer_key = "HhZg3kDcPxQiX7pUCg95lzIhi"
-        consumer_secret ="RwPrR82cLy38wMqeGG6ozzKEizqVjMbtDzDatWAbCEJkkVF33m"
-        access_token = "1319535856613425152-F2ILps9CmM57JBZsmMKfvjHU5bKU0S"
-        access_token_secret = "wVCv7om5NJUchoLZmfCwzubERHAdKvrJFvhDx5Gh7NhFC"
+        consumer_key = "xxxx"
+        consumer_secret ="xxxx"
+        access_token = "xxxx"
+        access_token_secret = "xxx"
         auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
         auth.set_access_token(access_token, access_token_secret)
         return auth
